@@ -1,9 +1,10 @@
 import { IProduct } from "@/types/globalTypes";
 import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
+
 interface ICart {
-    products: IProduct[],
-    total: number
+    products: IProduct[];
+    total: number;
 }
 
 const initialState: ICart = {
