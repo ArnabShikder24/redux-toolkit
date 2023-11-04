@@ -92,5 +92,53 @@
     ],
     "status": true,
     "rating": 5
+  },
+  {
+    "_id": 7,
+    "name": "Haylou watch4",
+    "image": "https://live.staticflickr.com/65535/52953899137_072c5c4ffc_h.jpg",
+    "price": 83.07,
+    "features": [
+      "1.2'' AMOLED HD display",
+      "Support 14 workout modes",
+      "Support all-day heart rate and blood oxygen monitoring",
+      "SONY GPS, accurate positioning of movement trajectory",
+      "5ATM waterproof",
+      "21 days of battery life"
+    ],
+    "status": true,
+    "rating": 5
+  },
+  {
+    "_id": 8,
+    "name": "Haylou watch7 PRO",
+    "image": "https://live.staticflickr.com/65535/52953899202_478089ea5f_h.jpg",
+    "price": 99.99,
+    "features": [
+      "1.2'' AMOLED HD display",
+      "Support 14 workout modes",
+      "Support all-day heart rate and blood oxygen monitoring",
+      "SONY GPS, accurate positioning of movement trajectory",
+      "5ATM waterproof",
+      "21 days of battery life"
+    ],
+    "status": false,
+    "rating": 5
+  },
+  {
+    "_id": 9,
+    "name": "Haylou Premium",
+    "image": "https://live.staticflickr.com/65535/52953899137_072c5c4ffc_h.jpg",
+    "price": 111.11,
+    "features": [
+      "1.2'' AMOLED HD display",
+      "Support 14 workout modes",
+      "Support all-day heart rate and blood oxygen monitoring",
+      "SONY GPS, accurate positioning of movement trajectory",
+      "5ATM waterproof",
+      "21 days of battery life"
+    ],
+    "status": true,
+    "rating": 5
   }
 ]
