@@ -3,7 +3,7 @@ import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
 import { Button } from './ui/button';
 import { Textarea } from './ui/textarea';
 import { FiSend } from 'react-icons/fi';
-import { useGetCommentQuery, usePostCommentMutation } from '@/redux/api/apiSlice';
+import { useGetCommentQuery, usePostCommentMutation } from '@/redux/feature/product/productApi';
 import { toast } from './ui/use-toast';
 
 // const dummyComments = [
@@ -19,7 +19,7 @@ interface IProps {
 
 export default function ProductReview({ id }: IProps) {
   const [inputValue, setInputValue] = useState<string>('');
-  const { data, isLoading: isLoadComment, refetch } = useGetCommentQuery(id);
+  const { data, isLoading: isLoadComment, refetch } = useGetCommentQuery(id, {refetchOnMountOrArgChange: true});
   const [postComment, { isLoading }] = usePostCommentMutation();
   
   const handleSubmit = async  (event: FormEvent<HTMLFormElement>) => {
