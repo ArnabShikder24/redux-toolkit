@@ -1,12 +1,10 @@
 import ProductReview from '@/components/ProductReview';
 import { Button } from '@/components/ui/button';
 import { toast } from '@/components/ui/use-toast';
-import { useGetProductQuery } from '@/redux/api/apiSlice';
+import { useGetProductQuery } from '@/redux/feature/product/productApi';
 import { addToCart } from '@/redux/feature/cart/cartSlice';
 import { useAppDispatch } from '@/redux/hook';
 import { IProduct } from '@/types/globalTypes';
-// import { IProduct } from '@/types/globalTypes';
-// import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 export default function ProductDetails() {
@@ -18,23 +16,12 @@ export default function ProductDetails() {
     return <p className='mt-10 text-center'>Loading...</p>
   }
 
-  //! Temporary code, should be replaced with redux
-  // const [data, setData] = useState<IProduct[]>([]);
-  // useEffect(() => {
-  //   fetch('../../public/data.json')
-  //     .then((res) => res.json())
-  //     .then((data) => setData(data));
-  // }, []);
-
-  // const product = data?.find((item) => item._id === Number(id));
   const handleAddProduct = (product: IProduct) => {
     dispatch(addToCart(product))
     toast({
       description: 'Product Added',
     });
   };
-
-  //! Temporary code ends here
 
   return (
     <>

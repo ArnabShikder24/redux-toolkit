@@ -2,39 +2,21 @@ import ProductCard from '@/components/ProductCard';
 import { Label } from '@/components/ui/label';
 import { Slider } from '@/components/ui/slider';
 import { Switch } from '@/components/ui/switch';
-// import { useToast } from '@/components/ui/use-toast';
-import { useGetProductsQuery } from '@/redux/api/apiSlice';
+import { useGetProductsQuery } from '@/redux/feature/product/productApi';
 import { setPriceRange, toggleState } from '@/redux/feature/product/productSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hook';
 import { IProduct } from '@/types/globalTypes';
-// import { IProduct } from '@/types/globalTypes';
-// import { useEffect, useState } from 'react';
 
 export default function Products() {
-  // const [data, setData] = useState<IProduct[]>([]);
   const { priceRange, status } = useAppSelector(state => state.product);
   const { data, isLoading } = useGetProductsQuery(undefined);
   const dispatch = useAppDispatch();
-  // useEffect(() => {
-  //   fetch('./data.json')
-  //     .then((res) => res.json())
-  //     .then((data) => setData(data));
-  // }, []);
 
-  // const { toast } = useToast();
   if (isLoading) {
     return <p className='mt-10 text-center'>Loading...</p>
   }
 
-  //! Dummy Data
-
-  // const status = true;
-  // const priceRange = 100;
-
-  //! **
-
   const handleSlider = (value: number[]) => {
-    // console.log(value);
     dispatch(setPriceRange(value[0]))
   };
 

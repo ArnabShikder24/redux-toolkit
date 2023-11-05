@@ -6,13 +6,6 @@ import { FiSend } from 'react-icons/fi';
 import { useGetCommentQuery, usePostCommentMutation } from '@/redux/feature/product/productApi';
 import { toast } from './ui/use-toast';
 
-// const dummyComments = [
-//   'Bhalo na',
-//   'Ki shob ghori egula??',
-//   'Eta kono product holo ??',
-//   '200 taka dibo, hobe ??',
-// ];
-
 interface IProps {
   id: string;
 }
