@@ -19,7 +19,9 @@ export default function Navbar() {
       <div className="h-full w-full bg-white/60">
         <div className="flex items-center justify-between w-full md:max-w-7xl h-full mx-auto ">
           <div>
-            <img className="h-8" src={logo} alt="log" />
+            <Link to='/' className='cursor-pointer'>
+              <img className="h-8" src={logo} alt="log" />
+            </Link>
           </div>
           <div>
             <ul className="flex items-center">
@@ -60,15 +62,16 @@ export default function Navbar() {
                     <DropdownMenuItem className="cursor-pointer">
                       Profile
                     </DropdownMenuItem>
-                    <DropdownMenuItem className="cursor-pointer">
-                      Billing
-                    </DropdownMenuItem>
-                    <DropdownMenuItem className="cursor-pointer">
-                      Team
-                    </DropdownMenuItem>
-                    <DropdownMenuItem className="cursor-pointer">
-                      Subscription
-                    </DropdownMenuItem>
+                    <Link to='/login'>
+                      <DropdownMenuItem className="cursor-pointer">
+                        Login
+                      </DropdownMenuItem>
+                    </Link>
+                    <Link to='/signup'>
+                      <DropdownMenuItem className="cursor-pointer">
+                        Sign Up
+                      </DropdownMenuItem>
+                    </Link>
                   </DropdownMenuContent>
                 </DropdownMenu>
               </li>

@@ -8,6 +8,8 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { useForm } from 'react-hook-form';
 import { FcGoogle } from 'react-icons/fc';
+import { createUser } from '@/redux/feature/user/userSlice';
+import { useAppDispatch } from '@/redux/hook';
 
 type UserAuthFormProps = React.HTMLAttributes<HTMLDivElement>;
 
@@ -22,9 +24,12 @@ export function SignupForm({ className, ...props }: UserAuthFormProps) {
     handleSubmit,
     formState: { errors },
   } = useForm<SignupFormInputs>();
+  const dispatch = useAppDispatch();
 
   const onSubmit = (data: SignupFormInputs) => {
     console.log(data);
+    dispatch(createUser({email: data.email, password: data.password}));
+    
   };
 
   return (
@@ -44,7 +49,7 @@ export function SignupForm({ className, ...props }: UserAuthFormProps) {
               autoCorrect="off"
               {...register('email', { required: 'Email is required' })}
             />
-            {errors.email && <p>{errors.email.message}</p>}
+            {errors.email && <p className='text-red-500 text-sm'>{errors.email.message}</p>}
             <Input
               id="password"
               placeholder="your password"
@@ -53,7 +58,7 @@ export function SignupForm({ className, ...props }: UserAuthFormProps) {
               autoCorrect="off"
               {...register('password', { required: 'Password is required' })}
             />
-            {errors.password && <p>{errors.password.message}</p>}
+            {errors.password && <p className='text-red-500 text-sm'>{errors.password.message}</p>}
             <Input
               id="password"
               placeholder="confirm password"
